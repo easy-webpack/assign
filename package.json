@@ -1,15 +1,16 @@
 {
   "name": "@easy-webpack/assign",
-  "version": "1.0.0",
   "description": "Easily deep assign objects and merge arrays inside of them",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "test": "TS_NODE_FAST=true TS_NODE_NO_PROJECT=true ava",
-    "prepublish": "tsc -p ."
+    "prepublish": "rimraf dist && tsc -p .",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/easy-webpack/assign.git"
+    "url": "https://github.com/easy-webpack/assign.git"
   },
   "keywords": [
     "object.assign",
@@ -29,14 +30,14 @@
   "homepage": "https://github.com/easy-webpack/assign#readme",
   "devDependencies": {
     "ava": "^0.15.2",
+    "rimraf": "^2.5.2",
     "semantic-release": "^4.3.5",
     "ts-node": "^0.9.1",
     "tslint": "^3.11.0",
     "tslint-config-standard": "^1.2.2",
     "typescript": ">=1.9.0-dev || ^2.0.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "ava": {
     "files": [
       "test/**/*.{ts,js}"
