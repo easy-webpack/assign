@@ -13,8 +13,11 @@ export function assign(current, addition, property: string = 'config', style: 'a
     return addition.slice()
   }
   else if (typeof addition === 'object') {
-    if (typeof current !== 'object' || addition['_literalReplace'])
+    if (typeof current !== 'object' || addition['_literalReplace']) {
+      if (addition['_literalReplace'])
+        delete addition['_literalReplace']
       current = {}
+    }
     else
       current = Object.assign({}, current)
 
