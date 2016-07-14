@@ -34,4 +34,4 @@ export function literalReplace<T>(object: T): T {
   return object
 }
 
-export default assign;
+export default assign
