@@ -12,7 +12,7 @@ export function assign(current, addition, property: string = 'config', style: 'a
   else if (Array.isArray(addition)) {
     return addition.slice()
   }
-  else if (typeof addition === 'object') {
+  else if (typeof addition === 'object' && (addition.constructor.name === 'Object' || !addition.constructor.name)) {
     if (typeof current !== 'object' || addition['_literalReplace']) {
       if (addition['_literalReplace'])
         delete addition['_literalReplace']
